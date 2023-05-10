@@ -29,10 +29,18 @@ const Nav = () => {
 
       <div>
         {session?.user &&
-          <div>
-            <Link href="/create-prompt" className='p-2 bg-primary'>Create Post</Link>
+          <div className='flex'>
+            <Link href="/create-prompt" className=' bg-primary'>Create Post</Link>
             <button onClick={() => {signOut();}}>Sign Out</button>
             <Link href="/profile">Profile</Link>
+            <Image
+              src={session.user.image}
+              width={20}
+              height={20}
+              alt="profile"
+            />
+
+  
           </div> 
           
         }
@@ -49,6 +57,7 @@ const Nav = () => {
           </div>
           
         }
+       
       </div>
     </nav>
   )
