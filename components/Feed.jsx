@@ -7,7 +7,13 @@ import PostCard from "./PostCard";
 const PostCardList = ({ data, handleTagClick }) => {
   return (
     <div>
-      Post Card List
+      {data.map((post) => (
+        <PostCard
+          key={post._id}
+          data={post}
+          handleTagClick={handleTagClick}
+        />
+      ))}
     </div>
   )
 }
