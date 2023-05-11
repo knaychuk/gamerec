@@ -11,8 +11,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <label>
           <span>Your Game Recommendation</span>
           <textarea 
-            value={post.post}
-            onChange={(e) => setPost({...post, post: e.target.value })}
+            value={post.rec}
+            onChange={(e) => setPost({...post, rec: e.target.value })}
             placeholder="Write post here"
             required
           />
