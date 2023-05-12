@@ -9,17 +9,13 @@ const PostCardList = ({ data, handleTagClick }) => {
 
   return (
     <div>
-      {/* {data.map((post) => (
+      {data.map((post) => (
         <PostCard
           key={post._id}
           post={post}
           handleTagClick={handleTagClick}
         />
-      ))} */}
-      {data.map((post) => (
-        <div>Hello</div>
       ))}
-
     </div>
   );
 };

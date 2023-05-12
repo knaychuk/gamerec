@@ -11,17 +11,21 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     <div>
       <div> 
         <div>
-
-
           <Image 
             src={post.creator.image}
             alt="user image"
             width={40}
             height={40}
-            
+            className="rounded-full"
           />
-        </div>
+          <div>
+            <h3>{post.creator.username}</h3>
+            <p>{post.creator.email}</p>
+          </div>
+        </div>     
       </div>
+      <p>{post.rec}</p>
+      <p onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p>
     </div>
   )
 }
