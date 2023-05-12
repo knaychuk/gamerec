@@ -5,13 +5,20 @@ import { useState, useEffect } from "react";
 import PostCard from "./PostCard";
 
 const PostCardList = ({ data, handleTagClick }) => {
+
+
   return (
-    <div className='mt-16 prompt_layout'>
-      {data.map((post) => (
+    <div>
+      {/* {data.map((post) => (
         <PostCard
           key={post._id}
           post={post}
           handleTagClick={handleTagClick}
+        />
+      ))} */}
+      {data.map((post) => (
+        <PostCard 
+          post={post}
         />
       ))}
     </div>
@@ -21,7 +28,7 @@ const PostCardList = ({ data, handleTagClick }) => {
 
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
-  const [posts, setPosts] = useState("");
+  const [allPosts, setAllPosts] = useState("");
 
   const handleSearchChange = (e) => {
 
@@ -32,7 +39,8 @@ const Feed = () => {
       const response = await fetch('/api/post');
       const data = await response.json();
 
-      setPosts(data);
+      setAllPosts(data);
+
     }
 
     fetchPosts();
@@ -50,7 +58,7 @@ const Feed = () => {
         />
       </form>
       <PostCardList 
-        data={[posts]}
+        data={allPosts}
         handleTagClick={() => {}}
       />
     </section>
