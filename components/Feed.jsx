@@ -17,10 +17,9 @@ const PostCardList = ({ data, handleTagClick }) => {
         />
       ))} */}
       {data.map((post) => (
-        <PostCard 
-          post={post}
-        />
+        <div>Hello</div>
       ))}
+
     </div>
   );
 };
@@ -28,7 +27,7 @@ const PostCardList = ({ data, handleTagClick }) => {
 
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
-  const [allPosts, setAllPosts] = useState("");
+  const [allPosts, setAllPosts] = useState([]);
 
   const handleSearchChange = (e) => {
 
