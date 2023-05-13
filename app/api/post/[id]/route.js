@@ -3,7 +3,7 @@ import { connectToDB } from "@utils/database";
 
 export const GET = async (request, { params }) => {
     try {
-        await connectToDB()
+        await connectToDB();
 
         const post = await Post.findById(params.id).populate('creator');
 
