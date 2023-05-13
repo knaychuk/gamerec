@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 import Form from '@components/Form';
+import Profile from '@components/Profile';
 
 const CreatePost = () => {
   const router = useRouter();
@@ -41,6 +42,7 @@ const CreatePost = () => {
   }
 
   return (
+    <div>
     <Form 
       type="Create"
       post={post}
@@ -48,6 +50,8 @@ const CreatePost = () => {
       submitting={submitting}
       handleSubmit={createPost}
     />
+    <Profile />
+    </div>
   )
 }
 export default CreatePost

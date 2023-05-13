@@ -32,7 +32,7 @@ const Nav = () => {
           <div className='flex'>
             <Link href="/create-post" className=' bg-primary'>Create Post</Link>
             <button onClick={() => signOut()}>Sign Out</button>
-            <Link href="/profile">Profile</Link>
+            <Link href="/my-profile">Profile</Link>
             <Image
               src={session.user.image}
               width={20}

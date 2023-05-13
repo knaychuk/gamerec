@@ -34,6 +34,7 @@ const Feed = () => {
       const response = await fetch('/api/post');
       const data = await response.json();
 
+      alert("use effect ran")
       setAllPosts(data);
 
     }
