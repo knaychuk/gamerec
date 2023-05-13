@@ -3,9 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import { useRouter, usePathname } from "next/router";
+import { useRouter, usePathname } from "next/navigation";
 
 const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+  const { data: session } = useSession();
+  const pathName = usePathname();
+  const router = useRouter();
 
   return (
     <div>
@@ -26,6 +29,16 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
       </div>
       <p>{post.rec}</p>
       <p onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p>
+      {session?.user.id === post.creator._id && pathName === '/my-profile' && (
+        <div>
+          <p onClick={handleEdit}>
+            Edit
+          </p>
+          <p onClick={handleDelete}>
+            Delete
+          </p>
+        </div>
+      )}
     </div>
   )
 }

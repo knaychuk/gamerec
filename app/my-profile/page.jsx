@@ -8,6 +8,7 @@ import Profile from "@components/Profile";
 
 const MyProfile = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const [posts, setPosts] = useState([]);
 
@@ -25,11 +26,11 @@ const MyProfile = () => {
   }, [session?.user.id]);
 
 
-  const handleEdit = () => {
-
+  const handleEdit = (post) => {
+    router.push(`/update-post?id=${post._id}`)
   }
 
-  const handleDelete = async () => {
+  const handleDelete = async (post) => {
 
   }
 
