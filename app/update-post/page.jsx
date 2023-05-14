@@ -35,29 +35,32 @@ const UpdatePost = () => {
     }
   }, [postId]);
 
-  // const createPost = async (e) => {
-  //   e.preventDefault();
-  //   setSubmitting(true);
+  const updatePost = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
 
-  //   try {
-  //     const response = await fetch('/api/post/new', {
-  //       method: 'POST',
-  //       body: JSON.stringify({
-  //         rec: post.rec,
-  //         userId: session?.user.id,
-  //         tag: post.tag
-  //       })
-  //     })
+    if(!postId) {
+      return alert('Post ID not found');
+    }
 
-  //     if(response.ok) {
-  //       router.push('/');
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   } finally {
-  //     setSubmitting(false);
-  //   }
-  // }
+    try {
+      const response = await fetch(`/api/post/${postId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          rec: post.rec,
+          tag: post.tag
+        })
+      })
+
+      if(response.ok) {
+        router.push('/');
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <div>
@@ -66,7 +69,7 @@ const UpdatePost = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={() => {}}
+      handleSubmit={updatePost}
     />
     </div>
   )
