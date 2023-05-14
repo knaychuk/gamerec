@@ -28,7 +28,7 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         </div>     
       </div>
       <p>{post.rec}</p>
-      <p onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p>
+      <p onClick={() => handleTagClick && handleTagClick(post.tag)}>#{post.tag}</p>
       {session?.user.id === post.creator._id && pathName === '/my-profile' && (
         <div>
           <p onClick={handleEdit}>

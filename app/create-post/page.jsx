@@ -50,7 +50,7 @@ const CreatePost = () => {
       submitting={submitting}
       handleSubmit={createPost}
     />
-    <Profile />
+
     </div>
   )
 }
