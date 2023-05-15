@@ -11,10 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
-      <body>
+      <body className='font-inter font-bold text-primary-t'>
         <Provider>
         <div className='main'>
-          <div className='gradient'/>
+          <div/>
         </div>
         <main className='app'>
           <Nav />

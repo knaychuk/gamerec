@@ -1,13 +1,14 @@
 import Feed from '@components/Feed';
+import Link from 'next/link';
 
 const Home = () => {
   return (
     <section>
-      <h1 className="header-text text-center">Discover & Share
-        <br className=""/>
-        <span>Game Recommondations or Other Info</span>
-      </h1>
-      <p className="text-center">GameRec is an open-source forum to share all things game related!</p>
+      <div className='text-center'>
+        <h1 className='text-4xl text-accent'>Discover & Share</h1>
+        <h2 className='text-3xl text-accent'>Awesome Game Recommendations</h2>
+      </div>
+
 
       <Feed />
     </section>

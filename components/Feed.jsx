@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 import PostCard from "./PostCard";
 
@@ -42,16 +43,20 @@ const Feed = () => {
   }, []);
 
   return (
-    <section>
-      <form>
+    <section className="mt-2">
+      <div className="flex flex-col justify-center items-center">  
+      <form className="my-3">
         <input 
           type="text"
-          placeholder="search for tag"
+          placeholder="search for genre"
           value={searchText}
           onChange={handleSearchChange}
           required
+          className="text-xl border-primary-b border-4 p-2 w-96 focus:outline-none"
         />
       </form>
+      <Link href="/create-post" className='button-primary'>Create Post</Link>
+      </div>
       <PostCardList 
         data={allPosts}
         handleTagClick={() => {}}

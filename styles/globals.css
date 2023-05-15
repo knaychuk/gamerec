@@ -1,10 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.header-text {
-  font-size: xx-large;
-  font-weight: bolder;
+.button-primary {
+  background: #008977;
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  transition: all 0.5s ease-in-out;
+
 }
+
+.button-primary:hover {
+  background-color: #017061;
+  transition: all 0.5s ease-in-out;
+}
+
+.profile-image {
+  border-radius: 9999px;
+  outline: 1px solid rgb(255, 255, 255);
+}
+
+/* .input {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+} */

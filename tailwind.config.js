@@ -11,7 +11,11 @@ module.exports = {
         inter: ['Inter','sans-serif'],
       },
       colors: {
-        'primary': '#FF5722',
+        'primary-t': '#3e3e3f',
+        'secondary-t': '#ffffff',
+        'primary-b': '#008977',
+        'secondary-b': '#fbfaf3',
+        'accent': '#0e2d3f'
       },
     },
   },
