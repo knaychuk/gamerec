@@ -11,24 +11,28 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const router = useRouter();
 
   return (
-    <div>
-      <div> 
-        <div>
+    <div className="bg-secondary-b p-6 m-2">
+      <div>
+        <div className="flex ">
           <Image 
-            src={post.creator.image}
-            alt="user image"
-            width={40}
-            height={40}
-            className="rounded-full"
+              src={post.creator.image}
+              alt="user image"
+              width={40}
+              height={40}
+              className="rounded-full object-contain"
           />
           <div>
-            <h3>{post.creator.username}</h3>
-            <p>{post.creator.email}</p>
+            <h3 className="text-sm font-medium mx-2">{post.creator.username}</h3>
           </div>
-        </div>     
+        </div>
       </div>
-      <p>{post.rec}</p>
-      <p onClick={() => handleTagClick && handleTagClick(post.tag)}>#{post.tag}</p>
+        
+        <p className="text-sm mt-2">{post.rec}</p>
+        <p 
+          onClick={() => handleTagClick && handleTagClick(post.tag)}
+          className="text-blue-400 text-sm mt-2"
+        >#{post.tag}</p>
+      
       {session?.user.id === post.creator._id && pathName === '/my-profile' && (
         <div>
           <p onClick={handleEdit}>

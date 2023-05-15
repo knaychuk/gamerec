@@ -9,7 +9,7 @@ const PostCardList = ({ data, handleTagClick }) => {
 
 
   return (
-    <div>
+    <div className=" mx-5 my-10 md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {data.map((post) => (
         <PostCard
           key={post._id}
@@ -49,10 +49,10 @@ const Feed = () => {
         <input 
           type="text"
           placeholder="search for genre"
-          value={searchText}
+          // value={searchText}
           onChange={handleSearchChange}
           required
-          className="text-xl border-primary-b border-4 p-2 w-96 focus:outline-none"
+          className="text-xl text-primary-t border-primary-b border-4 rounded-md p-2 w-94 focus:outline-none"
         />
       </form>
       <Link href="/create-post" className='button-primary'>Create Post</Link>

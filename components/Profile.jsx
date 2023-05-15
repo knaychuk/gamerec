@@ -8,15 +8,15 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       </h1>
       <p>{desc}</p>
 
-      <div>
-      {data.map((post) => (
-        <PostCard
-          key={post._id}
-          post={post}
-          handleEdit={() => handleEdit && handleEdit(post)}
-          handleDelete={() => handleDelete && handleDelete(post)}
-        />
-      ))}
+      <div className='mx-5 my-10 md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+        {data.map((post) => (
+          <PostCard
+            key={post._id}
+            post={post}
+            handleEdit={() => handleEdit && handleEdit(post)}
+            handleDelete={() => handleDelete && handleDelete(post)}
+          />
+        ))}
     </div>
     </section>
 

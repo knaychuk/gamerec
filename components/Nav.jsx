@@ -25,7 +25,7 @@ const Nav = () => {
 
   return (
     <nav className='flex items-center justify-between p-3 font-light'>
-      <Link href="/">
+      <Link href="/" onClick={() => setToggleDropdown(false)}>
         <GiRetroController color='#008977' fontSize='3em'/>
       </Link>
 
