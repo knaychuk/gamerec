@@ -34,13 +34,15 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         >#{post.tag}</p>
       
       {session?.user.id === post.creator._id && pathName === '/my-profile' && (
-        <div>
-          <p onClick={handleEdit}>
-            Edit
-          </p>
-          <p onClick={handleDelete}>
-            Delete
-          </p>
+        <div className="text-sm flex my-2">
+          <p 
+            onClick={handleEdit}
+            className="small-button-primary mr-2"
+          >Edit</p>
+          <p 
+            onClick={handleDelete}
+            className="small-button-secondary"
+          >Delete</p>
         </div>
       )}
     </div>

@@ -71,7 +71,12 @@ const Feed = () => {
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="text-xl text-primary-t border-primary-b border-4 rounded-md p-2 w-94 focus:outline-none"
+          className="
+          text-xl text-primary-t border-primary-b border-4 rounded-md p-2 focus:outline-none
+          sm:w-[24rem]
+          md:w-[30rem]
+          lg:w-[36rem]
+          "
         />
       </form>
       <Link href="/create-post" className='button-primary'>Create Post</Link>
