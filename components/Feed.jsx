@@ -72,7 +72,7 @@ const Feed = () => {
           onChange={handleSearchChange}
           required
           className="
-          text-xl text-primary-t border-primary-b border-4 rounded-md p-2 focus:outline-none
+          text-xl text-box
           sm:w-[24rem]
           md:w-[30rem]
           lg:w-[36rem]
