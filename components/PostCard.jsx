@@ -10,6 +10,11 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const pathName = usePathname();
   const router = useRouter();
 
+  const handleClick = () => {
+    router.push(`/user-profile/${post.creator._id}`)
+
+  }
+
   return (
     <div className="bg-secondary-b p-6 m-2">
       <div>
@@ -19,6 +24,7 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
               alt="user image"
               width={40}
               height={40}
+              onClick={handleClick}
               className="rounded-full object-contain"
           />
           <div>
