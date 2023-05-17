@@ -52,7 +52,7 @@ const MyProfile = () => {
   return (
     <Profile 
       name="Your"
-      desc={session && session.user.email ? "See your posts" : "See their posts"}
+      desc={"See your posts"}
       data={posts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}

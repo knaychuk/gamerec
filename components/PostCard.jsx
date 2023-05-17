@@ -11,12 +11,16 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/user-profile/${post.creator._id}`)
+    if(session?.user.id === post.creator._id) {
+      return router.push('/my-profile');
+    }
+
+    router.push(`/user-profile/${post.creator._id}?name=${post.creator.username}`);
 
   }
 
   return (
-    <div className="bg-secondary-b p-6 m-2">
+    <div className="bg-secondary-b p-6 m-2 rounded-xl">
       <div>
         <div className="flex ">
           <Image 

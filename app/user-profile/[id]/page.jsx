@@ -1,9 +1,15 @@
 'use client'
 
 import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
+
+import Profile from "@components/Profile"
 
 const UserProfile = ({ params }) => {
   const [posts, setPosts] = useState([])
+  
+  const searchParams = useSearchParams();
+  const userName = searchParams.get('name');
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -16,11 +22,12 @@ const UserProfile = ({ params }) => {
 },[params.id]);
 
   return (
-    <div>
-      {posts.map((post) => (
-        <div>{post.rec}</div>
-      ))}
-    </div>
+      <Profile 
+        name={`${userName}'s`}
+        desc={'See their posts'}
+        data={posts}
+      />
+    
   )
 }
 export default UserProfile
