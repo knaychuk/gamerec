@@ -20,7 +20,7 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   }
 
   return (
-    <div className="bg-secondary-b p-6 m-2 rounded-xl">
+    <div className="bg-secondary-b p-6 m-2 rounded-xl shadow">
       <div>
         <div className="flex ">
           <Image 
@@ -29,10 +29,13 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
               width={40}
               height={40}
               onClick={handleClick}
-              className="rounded-full object-contain"
+              className="rounded-full object-contain cursor-pointer"
           />
           <div>
-            <h3 className="text-sm font-medium mx-2">{post.creator.username}</h3>
+            <h3 
+              className="text-sm font-medium mx-2 cursor-pointer hover:text-primary-b"
+              onClick={handleClick}  
+            >{post.creator.username}</h3>
           </div>
         </div>
       </div>
@@ -40,18 +43,18 @@ const PostCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         <p className="text-sm mt-2">{post.rec}</p>
         <p 
           onClick={() => handleTagClick && handleTagClick(post.tag)}
-          className="text-blue-400 text-sm mt-2"
-        >#{post.tag}</p>
+          className="text-blue-400 text-sm mt-2 cursor-pointer"
+        >{post.tag}</p>
       
       {session?.user.id === post.creator._id && pathName === '/my-profile' && (
         <div className="text-sm flex my-2">
           <p 
             onClick={handleEdit}
-            className="small-button-primary mr-2"
+            className="small-button-primary mr-2 cursor-pointer"
           >Edit</p>
           <p 
             onClick={handleDelete}
-            className="small-button-secondary"
+            className="small-button-secondary cursor-pointer"
           >Delete</p>
         </div>
       )}

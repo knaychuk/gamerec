@@ -7,7 +7,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <h1 className="text-4xl ">{type} Post</h1>
         <p className="text-2xl">{type} your post here!</p>
       </div>
-      <form onSubmit={handleSubmit} className="bg-secondary-b flex flex-col justify-center items-center my-5 mx-10 py-10 px-5 rounded-md">
+      <form onSubmit={handleSubmit} className="bg-secondary-b flex flex-col justify-center items-center my-5 py-10 px-5 rounded-md">
         <label className="text-xl flex flex-col my-2">
           Your Game Recommendation
           <textarea 

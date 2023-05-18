@@ -27,6 +27,18 @@ const Feed = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch('/api/post');
+      const data = await response.json();
+      
+      setAllPosts(data);
+
+    }
+
+    fetchPosts();
+  }, []);
+
   const filterPosts = (searchText) => {
     const regex = new RegExp(searchText, "i");
     return allPosts.filter(
@@ -49,17 +61,18 @@ const Feed = () => {
     )
   }
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch('/api/post');
-      const data = await response.json();
-      
-      setAllPosts(data);
+  const handleTagClick = (tag) => {
+    clearTimeout(searchTimeout);
+    setSearchText(tag);
 
-    }
+    setSearchTimeout(
+      setTimeout(() => {
+        const searchResult = filterPosts(tag);
+        setSearchResults(searchResult);
+      }, 500)
+    )
 
-    fetchPosts();
-  }, []);
+  }
 
   return (
     <section className="mt-2">
@@ -91,7 +104,7 @@ const Feed = () => {
         {!searchText &&
         <PostCardList 
           data={allPosts}
-          handleTagClick={() => {}}
+          handleTagClick={handleTagClick}
         />
       }
     </section>
